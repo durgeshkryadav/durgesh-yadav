@@ -1,20 +1,20 @@
-import Image from 'next/image';
-import { FC } from 'react';
+import Image from "next/image";
+import { FC } from "react";
 
 interface ProfilePicProps {}
 
 const ProfilePic: FC<ProfilePicProps> = ({}) => {
-    return (
-        <div className="">
-            <Image
-                alt="Durgesh Yadav"
-                src="/images/durgesh.jpeg"
-                height={120}
-                width={120}
-                className="object-cover border-4 border-white rounded-full shadow-md"
-            />
-        </div>
-    );
+  return (
+    <div className=''>
+      <Image
+        alt='Durgesh Yadav'
+        src='/images/durgesh.png'
+        height={120}
+        width={120}
+        className='object-cover border-4 border-white rounded-full shadow-md'
+      />
+    </div>
+  );
 };
 
 export default ProfilePic;
