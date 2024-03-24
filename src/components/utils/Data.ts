@@ -20,18 +20,25 @@ export interface IProjectSectionCardData {
 export const projectCard: IProjectSectionCardData[] = [
   {
     id: 1,
+    title: "Developer Connector",
+    techStack: "React, Axios, Redux, Bootstarp, NodeJS, ExpressJS, MongoDB",
+    imageUrl: "dev-connector.PNG",
+    href: "https://github.com/DGSH9/DEVCONNECT",
+  },
+  {
+    id: 2,
+    title: "Youtube UI Clone",
+    techStack: "React, Axios, Redux, Tailwind CSS, Infinite-Scroll, Redux-Toolkit, Typescript, YouTube Data API v3",
+    imageUrl: "youtube-ui-clone.PNG",
+    href: "https://github.com/durgeshkryadav/youtube-ui-clone",
+  },
+  {
+    id: 3,
     title: "Netflix Clone(Movix)",
     techStack:
       "React, Infinite-Scroll, SCSS, Axios, Tmdb-Api, Redux-Toolkit, Typescript",
     imageUrl: "netflix-clone.PNG",
     href: "https://github.com/DGSH9/react-movix-tmdb-api-movie-database",
-  },
-  {
-    id: 2,
-    title: "Developer Connector",
-    techStack: "React, Axios, Redux, Bootstarp, NodeJS, ExpressJS, MongoDB",
-    imageUrl: "dev-connector.PNG",
-    href: "https://github.com/DGSH9/DEVCONNECT",
   },
 ];
 

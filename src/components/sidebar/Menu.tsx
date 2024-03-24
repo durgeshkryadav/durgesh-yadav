@@ -24,18 +24,27 @@ const Menu: FC<MenuProps> = ({}) => {
         <X className={`text-primary`} />
       </div>
       {/* List 1 */}
-      <List link='/' effect='slideUp'>
+
+      <List
+        link='/'
+        effect='slideUp'
+        className={`pl-6 py-3 hover:bg-zinc-600 `}>
         <Home /> Home
       </List>
       {/* List 2 */}
-      <div className='mt-5'>Socials</div>
-      <List target='_blank' link='https://github.com/DGSH9' effect='slideUp'>
+      <div className='mt-5 mb-5'>Socials</div>
+      <List
+        target='_blank'
+        link='https://github.com/DGSH9'
+        effect='slideUp'
+        className={`pl-6 py-3 hover:bg-zinc-600 `}>
         <Github color='#2a9d8f' /> Github
       </List>
       <List
         target='_blank'
         link='https://www.linkedin.com/in/durgeshkryadav/'
-        effect='slideUp'>
+        effect='slideUp'
+        className={`pl-6 py-3 hover:bg-zinc-600 `}>
         <Linkedin color='#0277b5' /> Linkedin
       </List>
     </div>
