@@ -23,7 +23,7 @@ export const projectCard: IProjectSectionCardData[] = [
     title: "Developer Connector",
     techStack: "React, Axios, Redux, Bootstarp, NodeJS, ExpressJS, MongoDB",
     imageUrl: "dev-connector.PNG",
-    href: "https://github.com/DGSH9/DEVCONNECT",
+    href: "https://github.com/durgeshkryadav/DEVCONNECT",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ export const projectCard: IProjectSectionCardData[] = [
     techStack:
       "React, Infinite-Scroll, SCSS, Axios, Tmdb-Api, Redux-Toolkit, Typescript",
     imageUrl: "netflix-clone.PNG",
-    href: "https://github.com/DGSH9/react-movix-tmdb-api-movie-database",
+    href: "https://github.com/durgeshkryadav/react-movix-tmdb-api-movie-database",
   },
 ];
 
@@ -48,7 +48,7 @@ export const moreProjects = [
     title: "Task Tracker",
     techStack: "React, Axios, Bootstarp, NodeJS, ExpressJS, MySQL",
     icon: "task-tracker.webp",
-    href: "https://github.com/DGSH9/task-tracker-mern",
+    href: "https://github.com/durgeshkryadav/task-tracker-mern",
   }
 ];
 

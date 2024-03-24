@@ -18,7 +18,7 @@ const Cover: FC<CoverProps> = ({}) => {
             <Link
               className='hidden md:block'
               target='_blank'
-              href='https://github.com/DGSH9'>
+              href='https://github.com/durgeshkryadav'>
               <Button variant='primary' sizes={"small"}>
                 <GithubIcon />
                 <span className='hidden md:block'>Github</span>

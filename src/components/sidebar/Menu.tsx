@@ -35,7 +35,7 @@ const Menu: FC<MenuProps> = ({}) => {
       <div className='mt-5 mb-5'>Socials</div>
       <List
         target='_blank'
-        link='https://github.com/DGSH9'
+        link='https://github.com/durgeshkryadav'
         effect='slideUp'
         className={`pl-6 py-3 hover:bg-zinc-600 `}>
         <Github color='#2a9d8f' /> Github
