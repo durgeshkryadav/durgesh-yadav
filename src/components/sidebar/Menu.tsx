@@ -1,12 +1,10 @@
 import { FC } from "react";
 import {
-  Code,
-  Flame,
+  Code2Icon,
   Github,
   Home,
   Image as ImageIcon,
   Linkedin,
-  Video,
   X,
 } from "lucide-react";
 import List from "../ui/List";
@@ -46,6 +44,12 @@ const Menu: FC<MenuProps> = ({}) => {
         effect='slideUp'
         className={`pl-6 py-3 hover:bg-zinc-600 `}>
         <Linkedin color='#0277b5' /> Linkedin
+      </List>
+      <List
+        link='/dsa'
+        effect='slideUp'
+        className={`pl-6 py-3 hover:bg-zinc-600 `}>
+        <Code2Icon color='#0277b5' /> DSA
       </List>
     </div>
   );
