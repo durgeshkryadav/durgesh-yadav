@@ -6,11 +6,13 @@ interface IModalComponentProps {
   isOpen: boolean;
   handleClose: () => void;
   notes: string;
+  isSolution?: boolean;
 }
 const ModalComponent = ({
   isOpen,
   handleClose,
   notes,
+  isSolution,
 }: IModalComponentProps) => {
   const style = {
     position: "absolute" as "absolute",
@@ -44,7 +46,15 @@ const ModalComponent = ({
             component='h2'>
             Close Modal
           </Typography>
-          <Typography id='modal-modal-description'>{notes}</Typography>
+          {isSolution ? (
+            <div className='bg-gray-800 rounded-lg p-6 overflow-auto max-h-96'>
+              <pre className='text-white whitespace-pre-wrap'>
+                {notes}
+              </pre>
+            </div>
+          ) : (
+            <Typography id='modal-modal-description'>{notes}</Typography>
+          )}
         </Box>
       </Modal>
     </div>

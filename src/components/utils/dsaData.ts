@@ -6,6 +6,7 @@ export interface IDSADataType {
   category: CategoryTypeEnum;
   videoLink: string;
   leetcodeLink: string;
+  solution: string;
   notes: string;
   difficulty: DifficultyTypeEnum;
 }
@@ -17,6 +18,7 @@ export const headerNameList: string[] = [
   "VideoLink",
   "LeetcodeLink",
   "Difficulty",
+  "Solutions",
   "Notes",
 ];
 
@@ -27,6 +29,21 @@ export const dsaData: IDSADataType[] = [
     category: CategoryTypeEnum.ARRAYS,
     videoLink: "https://youtu.be/KLlXCFG5TnA",
     leetcodeLink: "https://leetcode.com/problems/two-sum/",
+    solution: `
+    //time = O(n)
+    //space = O(n)
+    const twoSum = (nums, target) => {
+        // Input: nums = [2,7,11,15], target = 9
+        const mapObject = new Map();
+        for (let i = 0; i < nums.length; i++) {
+            temp = target - nums[i];
+            if(mapObject.has(temp)){
+                return [mapObject.get(temp),i];
+           }
+           mapObject.set(nums[i],i);
+        }
+    }
+        `,
     notes:
       "use hash map to instantly check for difference value, map will add index of last occurrence of a num, don’t use same element twice",
     difficulty: DifficultyTypeEnum.EASY,
@@ -38,6 +55,20 @@ export const dsaData: IDSADataType[] = [
     videoLink: "https://youtu.be/1pkOgXD63yU",
     leetcodeLink:
       "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+    solution: `
+      //time = O(n)
+      //space = O(1)
+      const bestTimeToBuySell = (nums) => {
+          // prices = [7,1,5,3,6,4]
+          maximumProfit = 0;
+          minPrice = 99999999999
+          for (let i = 0; i < prices.length; i++) {
+              minPrice = Math.min(minPrice, prices[i]);
+              maximumProfit = Math.max(maximumProfit, (prices[i] - minPrice));
+          }
+          return maximumProfit;
+      }
+        `,
     notes: "find local min and search for local max, sliding window",
     difficulty: DifficultyTypeEnum.EASY,
   },
@@ -49,6 +80,21 @@ export const dsaData: IDSADataType[] = [
     leetcodeLink: "https://leetcode.com/problems/contains-duplicate/",
     notes:
       "hashset to get unique values in array, to check for duplicates easily",
+    solution: `
+//time = O(n)
+//space = O(1)
+const ContainsDuplicate = (nums) => {
+    // Input: nums = [1,2,3,1]
+    const mapObject = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        if (mapObject.has(nums[i])) {
+            return true;
+        }
+        mapObject.set(nums[i],i);
+    }
+    return false;
+}
+        `,
     difficulty: DifficultyTypeEnum.EASY,
   },
   {
@@ -57,6 +103,47 @@ export const dsaData: IDSADataType[] = [
     category: CategoryTypeEnum.ARRAYS,
     videoLink: "https://youtu.be/bNvIQI2wAjk",
     leetcodeLink: "https://leetcode.com/problems/product-of-array-except-self/",
+    solution: `
+    const ProductOfArrayExceptSelf = (nums) => {
+      // Input: nums = [1,2,3,4]
+      // Output: [24,12,8,6]
+      const prefix = []; //[1,2,6,24]
+      const postfix = []; //[24,24,12,4] 
+      const output = [];
+      for (let i = 0; i < nums.length; i++) {
+          if (i === 0) {
+              prefix.push(nums[i]);
+          }
+          else {
+              prefix.push(prefix[i - 1] * nums[i]);
+          }
+      }
+      for (let j = nums.length - 1; j >= 0; j--) { //3,2,1,0,-1
+          if (j === nums.length - 1) {
+              postfix.push(nums[j]);
+          }
+          else {
+              postfix.unshift(nums[j] * postfix[0]); //[24,24,12,4]
+          }
+      }
+      for (let k = 0; k < nums.length; k++) {
+          if (k === 0) {
+              output.push(postfix[k + 1])
+              continue;
+          }
+          if (k === nums.length - 1) {
+              output.push(prefix[k - 1])
+              continue
+          }
+          else {
+              output.push(prefix[k - 1] * postfix[k + 1]);
+          }
+  
+      }
+      return output;
+  }
+  
+      `,
     notes:
       "make two passes, first in-order, second in-reverse, to compute products",
     difficulty: DifficultyTypeEnum.MEDIUM,
