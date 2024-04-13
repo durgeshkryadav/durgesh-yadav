@@ -22,7 +22,7 @@ const ProblemRow = ({ data }: IProblemRowProps) => {
         <div className='flex justify-center md:justify-start'>
           <a
             href={data.videoLink}
-            className='text-blue-300 hover:text-blue-500 hover:bg-slate-600 py-1 px-8 truncate border-2 border-solid border-gray-500'
+            className='text-blue-300 hover:text-blue-500 hover:bg-slate-600 py-1 px-6 truncate border-2 border-solid border-gray-500'
             target='_blank'
             rel='noopener noreferrer'>
             {"Link"}
@@ -31,7 +31,7 @@ const ProblemRow = ({ data }: IProblemRowProps) => {
         <div className='flex justify-center md:justify-start'>
           <a
             href={data.leetcodeLink}
-            className='text-blue-300 hover:text-blue-500 hover:bg-slate-600 py-1 px-8 truncate border-2 border-solid border-gray-500'
+            className='text-blue-300 hover:text-blue-500 hover:bg-slate-600 py-1 px-6 truncate border-2 border-solid border-gray-500'
             target='_blank'
             rel='noopener noreferrer'>
             {"Link"}
