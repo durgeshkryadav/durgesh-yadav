@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { IDSADataType } from "../utils/dsaData";
 import { DifficultyTypeEnum } from "@/enum";
 import ModalComponent from "../Modal/Modal";
+import { Divider } from "@mui/material";
 
 interface IProblemRowProps {
   data: IDSADataType;
@@ -73,6 +74,9 @@ const ProblemRow = ({ data }: IProblemRowProps) => {
           </span>
         </div>
       </div>
+      {data.id % 4 === 0 && (
+        <div className='border-2 border-solid border-indigo-600 ' />
+      )}
       <ModalComponent
         isOpen={isOpen}
         handleClose={() => setIsOpen(false)}
