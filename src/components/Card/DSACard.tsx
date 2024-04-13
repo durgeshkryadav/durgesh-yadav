@@ -3,20 +3,23 @@ import React, { useState } from "react";
 import { IDSADataType } from "../utils/dsaData";
 import { DifficultyTypeEnum } from "@/enum";
 import ModalComponent from "../Modal/Modal";
+
 interface IProblemRowProps {
   data: IDSADataType;
 }
+
 const ProblemRow = ({ data }: IProblemRowProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isSolution, setIsSolution] = useState<boolean>(false);
   const [notes, setNotes] = useState<string>("");
+
   return (
     <>
-      <div className='grid gap-1 grid-cols-[5%,25%,10%,10%,10%,15%,15%,15%] align-center bg-gray-800 text-white p-4 rounded-lg mb-4'>
-        <span className='text-gray-300 truncate '>{data.id}</span>
-        <span className='text-gray-300 truncate '>{data.name}</span>
-        <span className='text-gray-300 truncate '>{data.category}</span>
-        <div>
+      <div className='grid gap-1 grid-cols-1 md:grid-cols-[5%,25%,10%,10%,10%,15%,15%,15%] align-center bg-gray-800 text-white p-4 rounded-lg mb-4'>
+        <span className='text-gray-300 truncate'>{data.id}</span>
+        <span className='text-gray-300 truncate'>{data.name}</span>
+        <span className='text-gray-300 truncate'>{data.category}</span>
+        <div className='flex justify-center md:justify-start'>
           <a
             href={data.videoLink}
             className='text-blue-300 hover:text-blue-500 hover:bg-slate-600 py-1 px-8 truncate border-2 border-solid border-gray-500'
@@ -25,7 +28,7 @@ const ProblemRow = ({ data }: IProblemRowProps) => {
             {"Link"}
           </a>
         </div>
-        <div>
+        <div className='flex justify-center md:justify-start'>
           <a
             href={data.leetcodeLink}
             className='text-blue-300 hover:text-blue-500 hover:bg-slate-600 py-1 px-8 truncate border-2 border-solid border-gray-500'
@@ -34,7 +37,7 @@ const ProblemRow = ({ data }: IProblemRowProps) => {
             {"Link"}
           </a>
         </div>
-        <div>
+        <div className='flex justify-center md:justify-start'>
           <span
             className={`${
               data.difficulty === DifficultyTypeEnum.EASY ? " bg-lime-700" : ""
@@ -48,7 +51,7 @@ const ProblemRow = ({ data }: IProblemRowProps) => {
             {data.difficulty}
           </span>
         </div>
-        <div>
+        <div className='flex justify-center md:justify-start'>
           <span
             onClick={() => {
               setIsOpen(true);
@@ -59,7 +62,7 @@ const ProblemRow = ({ data }: IProblemRowProps) => {
             {"Solutions"}
           </span>
         </div>
-        <div>
+        <div className='flex justify-center md:justify-start'>
           <span
             onClick={() => {
               setIsOpen(true);
